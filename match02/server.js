@@ -1,12 +1,12 @@
 // main文件，做一个简易后台，接收request，调用dm_decrypt解析，并返回解析后的数据
-
+// // m=cc756c9b171fd02d3a92bfd26df9bcd7|1633535525000;
 // 导入依赖包，express用于创建应用；body-parser用于处理请求
 var express = require('express')
 var bodyParser = require('body-parser')
 
 // 导入抠出来的js文件
 // require写的是文件路径
-var encrypt = require('./match2')
+var encrypt = require('./result')
 
 // 创建应用实例
 var app = express()
@@ -23,7 +23,7 @@ var app = express()
 
 // for parsing application/x-www-form-urlencoded
 // 判断请求体格式是不是表单格式，如果是的话会调用qs库把请求体字符串转成对象
-app.use(bodyParser.urlencoded({extended: true, limit: "200mb", parameterLimit:500000}))
+app.use(bodyParser.urlencoded({extended: true, limit: "200mb", parameterLimit: 500000}))
 
 // for parsing application/json
 // 判断请求体格式是不是json格式，是的话调用JSON.parse把请求体字符串解析成对象
@@ -35,12 +35,12 @@ app.use(bodyParser.urlencoded({extended: true, limit: "200mb", parameterLimit:50
 // 创建路由
 // app.post(path, callback)
 // app.post('python调用的url', function(req, res) {回调函数的具体逻辑，在这里调用抠出来的js代码})
-app.post('/encrypt', function (req, res){
+app.get('/encrypt', function (req, res) {
     // req.body  request请求的内容，这里传的就是加密的数据
-    var data = req.body;
+    // var data = req.body;
 
     // 调用解析函数
-    var encryptData = encrypt.W(data.timestamp)
+    var encryptData = encrypt.W()
 
     // 返回解析结果
     res.send(encryptData)
@@ -49,7 +49,7 @@ app.post('/encrypt', function (req, res){
 
 // 启动服务，指定监听的端口，在python请求时要记得加端口
 // app.listen([port[, host[, backlog]]][, callback])
-app.listen(2229,() => {
+app.listen(2229, () => {
     console.log('服务开启，端口2229')
 })
 
