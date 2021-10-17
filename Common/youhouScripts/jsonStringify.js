@@ -37,3 +37,5 @@
 // } else {
 //     console.log("太菜了！");
 // }
+
+// JSON.stringify 的作用是将一个对象转换为字符串
