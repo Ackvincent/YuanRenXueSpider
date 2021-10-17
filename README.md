@@ -22,6 +22,7 @@ var m = hex_md5(timestamp);
 ```
 
 2、第二题 JS混淆---动态Cookie
+
 挂油猴脚本过掉debugger，用Fiddler抓包很容易发现第一次请求返回了一段Js，经典的ob混淆用AST处理后容易找到生成Cookie的位置。
 
 3、第四题 雪碧图
@@ -29,6 +30,7 @@ var j_key = '.' + hex_md5(btoa(data.key + data.value).replace(/=/g, '')); 生成
 left对应偏移量，在计算时要加上原本img的宽度11px。
 
 4、第五题 乱码增强
+
 需要解析四个值cookie中的RM4hZBv0dDon443M，m和参数f，m。
 ```
 "m": window._$is,
@@ -69,6 +71,7 @@ nodejs调试时，针对Message too long for RSA：搜索这段文字找到ce函
  h(t, e)函数，在这段函数调试时容易发现this.DB的值不同，全局搜索b.prototype.DB可以找到赋值的地方。
 
 6、第七题 动态字体
+
 直接clone下来，需要手动修改train_data_knn里的对照表，用KNN训练数据。
 
 8、第十二题 入门级Js
@@ -80,9 +83,11 @@ var list = {
 ```
 
 9、第十三题 入门级Js2
+
 第一次请求返回的JS中的cookie按括号的内字符拼接。
 
 10、第十五题 wasm初体验
+
 看到这句话fetch('/static/match/match15/main.wasm')把文件保存下来，用相应库执行。
 vm = pywasm.load("./main.wasm")
 result = vm.exec("目标方法", [参数1, 参数2])
