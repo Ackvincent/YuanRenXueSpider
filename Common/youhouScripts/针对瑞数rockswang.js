@@ -69,7 +69,7 @@
 
 })();
 
-
+// hook eval
 (function() {
     if (window.__cr_eval) return
     window.__cr_eval = window.eval
@@ -86,6 +86,7 @@
     console.log(">>>>>>>>>>>>>> eval injected: " + document.location + " <<<<<<<<<<<<<<<<<<<")
 })();
 
+// hook Function
 (function() {
     if (window.__cr_fun) return
     window.__cr_fun = window.Function
