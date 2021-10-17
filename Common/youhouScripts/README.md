@@ -1,4 +1,5 @@
-https://wiki.greasespot.net/Metadata_Block#.40match
+文档：https://wiki.greasespot.net/Metadata_Block#.40match
+
 一、Hook
 在函数被调用前，对函数进行替换，在页面加载前，通过替换JS上下文的对象，将JS上下文中的对象和方法替换掉。
 ```
